@@ -863,10 +863,24 @@ private[akka] class ActorSystemImpl(
 
             if (settings.JvmExitOnFatalError)
               try logFatalError("shutting down JVM since 'akka.jvm-exit-on-fatal-error' is enabled for", cause, thread)
-              finally System.exit(-1)
+              
+
+              
+              finally logFatalError("Testing: Not exit System")
+              // finally System.exit(-1)
+            
+
+
+              
             else
               try logFatalError("shutting down", cause, thread)
-              finally terminate()
+              
+              finally logFatalError("Testing: Not terminate actosystem")
+              // finally terminate()
+
+
+
+
         }
       }
 
